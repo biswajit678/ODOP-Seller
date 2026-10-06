@@ -34,12 +34,16 @@ export const getAllBanner = wrapAsync (async (req: Request, res: Response) => {
 
     const skip = (page - 1) * limit;
 
-    const query = {type};
+    const query: any = {};
+
+    if(type){
+        query.type = type;
+    }
 
     const [banner, total] = await Promise.all([
-        await Banner.find(query).skip(skip).limit(limit),
+        Banner.find(query).skip(skip).limit(limit),
 
-        await Banner.countDocuments(query)
+        Banner.countDocuments(query)
     ]);
     sendResponse(res, {
         status:200,
