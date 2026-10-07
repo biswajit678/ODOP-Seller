@@ -4,15 +4,11 @@ const categorySchema = new mongoose.Schema({
     name:{
         type:String,
         required:true,
-        trim:true
+        trim:true,
+        unique:true
     },
     title:{
         type:String
-    },
-    collection:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Collection",
-        required:true
     },
     image:String
 },{timestamps:true});

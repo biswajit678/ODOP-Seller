@@ -2,9 +2,8 @@ import Router from "express";
 import adminAuthRoute from "./auth.route";
 import adminUserRoute from "./adminUser.route";
 import bannerRoute from "./banner.routes";
-import collectionRoute from "./collection.route";
 import categoryRoute from "./category.route";
-import districtRoute from "./district.route";
+import districtRoute from "./district.route"; 
 import productRoute from "./product.route";
 
 const router = Router();
@@ -14,8 +13,6 @@ router.use("/auth", adminAuthRoute);
 router.use("/user", adminUserRoute);
 
 router.use("/banner", bannerRoute);
-
-router.use("/collection", collectionRoute);
 
 router.use("/category", categoryRoute);
 
